@@ -1,9 +1,9 @@
 import { Octokit } from '@octokit/rest';
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-const owner = process.env.GITHUB_OWNER;
-const repo = process.env.GITHUB_REPO;
-const path = process.env.GITHUB_FILE_PATH;
+const owner: string = process.env.GITHUB_OWNER;
+const repo: string = process.env.GITHUB_REPO;
+const path: string = process.env.GITHUB_FILE_PATH;
 
 export default async function oktozPage() {
   
