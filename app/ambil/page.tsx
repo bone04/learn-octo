@@ -3,6 +3,9 @@ import { Octokit } from "@octokit/rest";
   const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN || undefined
   });
+ const owner = process.env.GITHUB_OWNER;
+  const repo = process.env.GITHUB_REPO;
+  const path = process.env.GITHUB_FILE_PATH;
 
 export default async function AmbilPage() {
   const response = await octokit.rest.repos.getContent({
