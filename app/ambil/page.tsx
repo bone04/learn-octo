@@ -16,7 +16,11 @@ export default async function AmbilPage() {
       repo,
       path
     });
-  
+    if (!data) {
+    return {
+      notFound: true,
+    }
+  }
   return (
     <div>
       <h1>Hello Next.js! Ambil Page</h1>
