@@ -6,9 +6,9 @@ export default async function AmbilPage() {
     auth: process.env.GITHUB_TOKEN || undefined
   });
   
- const owner = process.env.GITHUB_OWNER;
-  const repo = process.env.GITHUB_REPO;
-  const path = process.env.GITHUB_FILE_PATH;
+ const owner: string = process.env.GITHUB_OWNER || "bone04"
+  const repo: string = process.env.GITHUB_REPO || "learn-octo"
+  const path: string = process.env.GITHUB_FILE_PATH || "items.json"
 
   const response = await octokit.rest.repos.getContent({
       owner,
