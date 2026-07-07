@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/rest";
+// https://raw.githubusercontent.com/bone04/learn-octo/main/items.json
 
 export default async function AmbilPage() {
 
