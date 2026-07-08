@@ -8,7 +8,9 @@ export async function GET(request: Request) {
   const owner: string = process.env.GITHUB_OWNER || "bone04"
   const repo: string = process.env.GITHUB_REPO || "learn-octo"
   const path: string = process.env.GITHUB_FILE_PATH || "items.json"
-
+ if (!owner) {
+      throw new Error("OWNER environment variable is required.");
+    }
   const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN || undefined
     });
