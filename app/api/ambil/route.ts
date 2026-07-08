@@ -3,7 +3,7 @@ import { Octokit } from "@octokit/rest";
 export const dynamic = 'force-static';
 // https://raw.githubusercontent.com/bone04/learn-octo/main/items.json
 
-export async function GET(request: Request) {
+export async function GET() {
   
   const owner: string = process.env.GITHUB_OWNER || "bone04"
   const repo: string = process.env.GITHUB_REPO || "learn-octo"
