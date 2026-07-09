@@ -15,11 +15,16 @@ export async function GET() {
       auth: process.env.GITHUB_TOKEN || undefined
     });
     
-  const response = await octokit.rest.repos.getContent({
+  const  { data } = = await octokit.rest.repos.getContent({
       owner,
       repo,
       path
     });
+
+  if (!Array.isArray(data) && data.content) {
+    const content = Buffer.from(data.content, "base64").toString("utf8");
+    console.log(content);
+    }
   
 return NextResponse.json("response route");
 }
