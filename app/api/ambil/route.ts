@@ -37,5 +37,5 @@ export async function GET() {
       console.log(content);
       }
   */
-return NextResponse.json("response route");
+return NextResponse.json({ message: "Data received" });
 }
