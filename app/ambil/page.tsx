@@ -2,8 +2,19 @@
 
 export default async function AmbilPage() {
     // const ambilData = fetch();
+    const response = await fetch(`https://bone04.github.io/learn-octo/api/ambil`, {
+        method: "GET"
+        }
+      );
+      const itemsTodays = await response.json();
+    /*
+    ***
+      // const todaysTodaysList = itemsTodays["todays"]; // array of nama items todays
+      const todaysTodaysList = itemsTodays;
+      console.log("items todays : ", todaysTodaysList); // array of object
       
-  
+  ****
+  */
     return (
     <div>
       <h1>Hello Next.js! Ambil Page</h1>
