@@ -7,14 +7,11 @@ export default async function AmbilPage() {
         }
       );
       const itemsTodays = await response.json();
-    /*
-    ***
+
       // const todaysTodaysList = itemsTodays["todays"]; // array of nama items todays
       const todaysTodaysList = itemsTodays;
       console.log("items todays : ", todaysTodaysList); // array of object
       
-  ****
-  */
     return (
     <div>
       <h1>Hello Next.js! Ambil Page</h1>
