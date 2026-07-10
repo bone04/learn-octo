@@ -21,10 +21,17 @@ export async function GET() {
       path
     });
 
-  if (!Array.isArray(data) && data.content) {
-    const content = Buffer.from(data.content, "base64").toString("utf8");
-    console.log(content);
+  if (!Array.isArray(data)) { // Filter out directories
+
+    if (data.type === 'file') { // Make sure it's a file
+      data.content;
     }
-  
+  }
+  /*
+    if (!Array.isArray(data) && data.content) {
+      const content = Buffer.from(data.content, "base64").toString("utf8");
+      console.log(content);
+      }
+  */
 return NextResponse.json("response route");
 }
