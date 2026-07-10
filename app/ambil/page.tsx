@@ -2,7 +2,7 @@
 
 export default async function AmbilPage() {
     // const ambilData = fetch();
-      const response = await fetch("api/ambil", {
+      const response = await fetch(`api/ambil`, {
         method: "GET"
         }
       );
