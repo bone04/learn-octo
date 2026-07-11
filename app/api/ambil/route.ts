@@ -14,12 +14,15 @@ export async function GET() {
   const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN || undefined
     });
-    
-  const  response = await octokit.rest.repos.getContent({
+    // .request('GET /repos/{owner}/{repo}/contents/{path}'
+  // octokit.rest.repos.getContent({
+  const  response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner,
       repo,
-      path
-    });
+      path,
+      headers: {
+        'X-GitHub-Api-Version': '2026-03-10'
+        });
 
   const fileContent = Buffer.from(response.data.content, "base64").toString("utf-8");
   console.log(fileContent);
