@@ -22,7 +22,8 @@ export async function GET() {
       path,
       headers: {
         'X-GitHub-Api-Version': '2026-03-10'
-        });
+        }
+  });
 
   const fileContent = Buffer.from(response.data.content, "base64").toString("utf-8");
   console.log(fileContent);
